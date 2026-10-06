@@ -1,0 +1,99 @@
+.bug-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* separation instead of borders */
+}
+
+.bug-item {
+  border-radius: var(--radius-sm);
+  background: var(--surface-color);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.bug-item:hover {
+  border-color: var(--border-focus);
+}
+
+.bug-item-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  text-align: left;
+  outline: none;
+}
+
+.bug-item-issue {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+.bug-item-location {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+
+.bug-item-chevron-wrap {
+  flex-shrink: 0;
+  color: var(--text-tertiary);
+  display: flex;
+}
+
+.bug-item-detail-wrap {
+  overflow: hidden;
+}
+
+.bug-item-detail {
+  padding: 0 16px 16px 16px;
+}
+
+.bug-detail-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary);
+  margin-bottom: 8px;
+  margin-top: 4px; /* compensate for padding */
+}
+
+.bug-item-detail p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.bug-list-empty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--badge-bg);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+}
+
+.empty-icon {
+  color: #388e3c;
+}
+
+.empty-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+}

@@ -1,0 +1,31 @@
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px 0;
+  height: 200px;
+}
+
+.loading-spinner-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-messages {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.loading-message {
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+}

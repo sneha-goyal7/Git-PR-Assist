@@ -1,0 +1,182 @@
+.review-form {
+  width: 100%;
+}
+
+.review-form-input-wrap {
+  width: 100%;
+  position: relative;
+  display: flex;
+  background: var(--surface-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--border-subtle);
+  transition: box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.review-form-input-wrap.focused {
+  border-color: var(--border-focus);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.review-form-input {
+  flex: 1;
+  padding: 18px 24px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  border-radius: var(--radius-lg);
+  font-size: 0.95rem;
+  padding-right: 64px; /* Room for the button */
+}
+
+/* Override index.css focus for this specialized input */
+.review-form-input:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.review-form-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%) !important; /* Will overlap Framer motion so we do hacky flex positioning instead. Wait no, absolute is better. */
+  padding: 10px;
+  border-radius: 50%;
+  min-width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: var(--accent-inverse);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Framer motion wraps the button and messes up the top:50% absolute translate. So wrap differently: */
+/* I'll use flex layout instead of absolute */
+
+.review-form-input-wrap {
+  display: flex;
+  align-items: center;
+  padding-right: 8px;
+}
+.review-form-input {
+  padding-right: 12px;
+}
+.review-form-btn {
+  position: static;
+  transform: none !important; 
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.review-form-hint {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  margin-top: 16px;
+  letter-spacing: 0.02em;
+}
+
+.review-form-wrapper {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Spinner inside the fetch button */
+.review-form-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* PR list panel */
+.pr-list {
+  margin-top: 12px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-subtle);
+  overflow: hidden;
+}
+
+.pr-list-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-subtle);
+  margin: 0;
+}
+
+.pr-list-items {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.pr-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-radius: calc(var(--radius-lg) - 4px);
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+  color: inherit;
+}
+
+.pr-list-item:hover {
+  background: var(--hover-bg, rgba(0, 0, 0, 0.04));
+}
+
+.pr-list-item-number {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-mono, monospace);
+}
+
+.pr-list-item-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pr-list-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 540px) {
+  .review-form-input {
+    font-size: 0.9rem;
+    padding: 16px;
+  }
+}

@@ -1,0 +1,53 @@
+.improvement-items {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.improvement-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.improvement-item-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.improvement-category {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary);
+  background: var(--badge-bg);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+}
+
+.improvement-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.improvement-code {
+  background: #f8f8f8;
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+@media (prefers-color-scheme: dark) {
+   /* If system is dark, maybe code is dark, but minimal theme is forced light here, so keep it light */
+}

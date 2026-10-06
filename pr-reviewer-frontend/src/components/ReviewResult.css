@@ -1,0 +1,31 @@
+.review-result {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.review-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.review-result-back {
+  padding: 10px 18px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-fast);
+}
+
+.review-result-back:hover {
+  background: var(--surface-color);
+  box-shadow: var(--shadow-subtle);
+}
+
+.review-result-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

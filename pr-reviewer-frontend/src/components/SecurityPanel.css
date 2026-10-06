@@ -1,0 +1,132 @@
+.security-panel {
+  transition: all var(--transition-smooth);
+}
+
+.security-danger {
+  border-color: #fbcfe8;
+  box-shadow: 0 4px 20px rgba(225, 29, 72, 0.05);
+}
+
+.sec-safe-icon { color: #388e3c; }
+.sec-warn-icon { color: #f57c00; }
+.sec-critical-icon { color: #e11d48; }
+
+.sec-safe-banner {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--badge-bg);
+  border-radius: var(--radius-sm);
+}
+
+.sec-safe-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.sec-danger-banner {
+  background: #fff1f2;
+  color: #be123c;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  border: 1px solid #ffe4e6;
+}
+
+.sec-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sec-item {
+  border-radius: var(--radius-sm);
+  background: var(--surface-color);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.sec-item.sec-critical-border {
+  border-left: 3px solid #e11d48;
+}
+
+.sec-item:hover {
+  border-color: var(--border-focus);
+}
+
+.sec-item-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  text-align: left;
+  outline: none;
+}
+
+.sec-item-type {
+  flex: 1;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.sec-item-file {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+
+.sec-chevron-wrap {
+  flex-shrink: 0;
+  color: var(--text-tertiary);
+  display: flex;
+}
+
+.sec-item-detail-wrap {
+  overflow: hidden;
+}
+
+.sec-item-detail {
+  padding: 0 16px 16px 16px;
+}
+
+.sec-detail-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary);
+  margin-bottom: 8px;
+  margin-top: 12px;
+}
+
+.sec-item-detail p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.sec-remediation {
+  color: var(--text-primary) !important;
+  background: #f8f8f8;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Severity badge colors specifically for security */
+.badge.sec-critical { background: #ffe4e6; color: #e11d48; border-color: #fecdd3; }
+.badge.sec-high { background: #ffedd5; color: #ea580c; border-color: #fed7aa; }
+.badge.sec-medium { background: #fef3c7; color: #d97706; border-color: #fde68a; }
